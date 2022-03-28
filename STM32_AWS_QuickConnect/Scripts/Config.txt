@@ -1,0 +1,7 @@
+SSID: iot_demo
+Password: stm32u585
+Access_Key: AKIAQC3VOUARTX2UIZGG
+Secret_Key: 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
+Region: eu-west-1
+Endpoint:	a1qwhobjtvew8t.iot.eu-west-1.amazonaws.com
+ThingName:	IOT_THING_NAME

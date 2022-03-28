@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>X-CUBE-AWS Projects</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="../_htmresc/mini-stp_2020.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="../_htmresc/favicon.png" />
+</head>
+<body>
+<h1 id="x-cube-aws-projects"><mark>X-CUBE-AWS</mark> Projects</h1>
+<p>The application samples are located under <code>STM32CubeExpansion_Cloud_AWS_VX.Y.Z/Projects/Applications</code>, and all of them have the same structure:</p>
+<ul>
+<li><code>/[CMx]/Inc</code> header files of the application.</li>
+<li><code>[/config_files/]</code> user configuration files of FreeRTOS and its dependencies.</li>
+<li><code>/[CMx]/Src</code> source code of the application.</li>
+<li><code>/EWARM</code>, <code>/MDK-ARM</code>, and <code>/STM32CubeIDE</code> pre-configured projects for each toolchain.</li>
+<li><code>readme.txt</code> describing the application behavior and the environment required to run the example.</li>
+</ul>
+<p>Note: refer to section “Development Toolchains and Compilers” and “Supported Devices and boards” of the Firmware package <a href="../Release_Notes.html">release notes <span class="icon-link"></span></a> to know about the SW/HW environment used for the Firmware development and validation.</p>
+<hr />
+<p>The table below contains the list of the provided applications.</p>
+<p>Some projects enable several applications. See the project readme.txt for details on the possible configurations.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Module Name</th>
+<th style="text-align: left;">Project Name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">B-L4S5I-IOT01A</th>
+<th style="text-align: left;">NUCLEO-H755ZI</th>
+<th style="text-align: left;">STM32WB5MM-DK</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Provisioning</td>
+<td style="text-align: left;">STSAFE_A1xx</td>
+<td style="text-align: left;">Bootloader_STSAFE/ STSAFE_Provisioning</td>
+<td style="text-align: left;">Pair the on-board secure element with the MCU secure bootloader</td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Secure bootloader</td>
+<td style="text-align: left;">STM32_Secure_Engine, STM32_Key_Management_Services, STSAFE_A1xx</td>
+<td style="text-align: left;">Bootloader_STSAFE/ 2_Images_{SECoreBin|SBSFU}</td>
+<td style="text-align: left;">FreeRTOS-dedicated bootloader relying on the on-board secure element</td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Secure bootloader</td>
+<td style="text-align: left;">STM32_Secure_Engine, STM32_Key_Management_Services</td>
+<td style="text-align: left;">Bootloader_KMS/ 2_Images_{SECoreBin|SBSFU}</td>
+<td style="text-align: left;">FreeRTOS-dedicated bootloader, with secure SW key management system</td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Secure bootloader</td>
+<td style="text-align: left;">STM32_Secure_Engine</td>
+<td style="text-align: left;">Bootloader_OSC/ 2_Images_{SECoreBin|SBSFU}</td>
+<td style="text-align: left;">FreeRTOS-dedicated bootloader</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;"><span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Demo</td>
+<td style="text-align: left;">FreeRTOS</td>
+<td style="text-align: left;">Cloud/aws_demos</td>
+<td style="text-align: left;">OTA firmware update demo of FreeRTOS</td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;"><span class="icon-st-update"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Demo</td>
+<td style="text-align: left;">FreeRTOS</td>
+<td style="text-align: left;">Cloud/aws_demos</td>
+<td style="text-align: left;">MQTT demo of FreeRTOS, with optional telemetry (emulated from CPU2 on NUCLEO-H755ZI, board sensors on STM32WB5MM-DK)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;"><span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Demo</td>
+<td style="text-align: left;">FreeRTOS</td>
+<td style="text-align: left;">Cloud/aws_demos_osc</td>
+<td style="text-align: left;">OTA firmware update demo of FreeRTOS, SW-only for STSAFE-enabled boards</td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Qualification</td>
+<td style="text-align: left;">FreeRTOS</td>
+<td style="text-align: left;">Cloud/aws_tests</td>
+<td style="text-align: left;">Test application of the FreeRTOS Qualification Program</td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;"><span class="icon-st-update"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Qualification</td>
+<td style="text-align: left;">FreeRTOS</td>
+<td style="text-align: left;">Cloud/aws_tests_osc</td>
+<td style="text-align: left;">Test application of the FreeRTOS Qualification Program, SW-only for STSAFE-enabled boards</td>
+<td style="text-align: left;">✓</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
