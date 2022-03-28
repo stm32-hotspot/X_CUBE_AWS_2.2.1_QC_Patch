@@ -46,7 +46,7 @@ pip install boto3
 
 **[Create an IAM user in your AWS account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)**
 - You need the **Access_Key** and **Secret_Key**. ***(Keep them safe and don't share)***
-- Below is the commanded policy for your IAM user. Replace **REGION_NAME** with the desired region for the device (example: us-east-2).
+- Below is the recommanded policy for your IAM user. Replace **REGION_NAME** with the desired region for the device (example: us-east-2).
 
 ```
 {
@@ -152,7 +152,7 @@ python .\apply_patch.py
 
 ![open_declaration](https://user-images.githubusercontent.com/41168224/160021076-87920f35-59e8-4706-abec-53f098ff4094.png)
 
-- Get your enpoint from AWS IoT Core. You find it under ***Settings***
+- Get your endpoint from AWS IoT Core. You find it under ***Settings***
 
 ![endpoint](https://user-images.githubusercontent.com/41168224/160027913-4240a649-f2e1-4e44-bcee-15feb07700a3.png)
 
