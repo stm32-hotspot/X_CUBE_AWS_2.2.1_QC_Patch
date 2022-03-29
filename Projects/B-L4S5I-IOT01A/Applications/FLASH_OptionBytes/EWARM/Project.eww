@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\FLASH_OptionBytes.ewp</path>
+    </project>
+    <batchBuild>
+        <batchDefinition>
+            <name>Build_All</name>
+            <member>
+                <project>FLASH_OptionBytes</project>
+                <configuration>X-CUBE-AWS_2.0.0</configuration>
+            </member>
+            <member>
+                <project>FLASH_OptionBytes</project>
+                <configuration>X-CUBE-AWS_2.2.0</configuration>
+            </member>
+        </batchDefinition>
+    </batchBuild>
+</workspace>
