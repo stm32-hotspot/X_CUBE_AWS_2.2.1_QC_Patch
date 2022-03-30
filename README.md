@@ -1,7 +1,20 @@
 # X_CUBE_AWS_2.2.1 Quick Connect Patch
 Prepare [X-CUBE-AWS 2.2.1](https://www.st.com/en/embedded-software/x-cube-aws.html) For Quick Connect using the [B-L4S5I-IOT01A](https://www.st.com/en/evaluation-tools/b-l4s5i-iot01a.html) board
 
-## What is X_CUBE_AWS_2.2.1 Quick Connect?
+# Table of Contents
+
+1. [What is X_CUBE_AWS_2.2.1 Quick Connect?](#1-what-is-x_cube_aws_221-quick-connect)
+2. [What is X_CUBE_AWS_2.2.1 Quick Connect Patch?](#2-what-is-x_cube_aws_221-quick-connect-patch)
+3. [Prerequisite](#3-prerequisite)
+4. [Get the firmware packs](#4-get-the-firmware-packs)
+5. [Apply the patch](#5-apply-the-patch)
+6. [Open the projects](#6-open-the-projects)
+7. [Configure and build the projects](#7-configure-and-build-the-projects)
+8. [Run the Quick Connect script](#8-run-the-quick-connect-script)
+9. [Check your device in AWS IoT Core](#9-check-your-device-in-aws-iot-core)
+10. [Cleaning up](#10-cleaning-up)
+
+# 1. What is X_CUBE_AWS_2.2.1 Quick Connect?
 **X_CUBE_AWS_2.2.1 Quick Connect** is a script that automates most of the steps required to connect [B-L4S5I-IOT01A](https://www.st.com/en/evaluation-tools/b-l4s5i-iot01a.html) board and [X-CUBE-AWS 2.2.1](https://www.st.com/en/embedded-software/x-cube-aws.html) to AWS making it easy and takes less time.
 
 The script will:
@@ -21,13 +34,13 @@ The script will:
 	- Attach certificate to thing
 	- Attach policy to the certificate
 
-## What is X_CUBE_AWS_2.2.1 Quick Connect Patch?
+# 2. What is X_CUBE_AWS_2.2.1 Quick Connect Patch?
 - The **X_CUBE_AWS_2.2.1 Quick Connect Patch** will remove the projects that are not needed by this Quick Connect. This to remove the confusion on which projects you need to import and build with STM32CubeIDE
 - Copy the Quick Connect script
 - Chnage the aws_demos **main.c** file to be compatible with X_CUBE_AWS_2.2.1 Quick Connect
 
 
-## Prerequisite
+# 3. Prerequisite
 **[STM32CubeIDE](https://www.st.com/stm32cubeide)**
 - Make sure to use rev 1.8.0
 
@@ -90,14 +103,14 @@ pip install boto3
 
 ***NOTE: This was tested on Windows 10 only***
 
-## Get the firmware packs
+# 4. Get the firmware packs
 - Download and extreact [X-CUBE-AWS 2.2.1](https://www.st.com/en/embedded-software/x-cube-aws.html)
 
 - Clone the repo in your **STM32CubeExpansion_Cloud_AWS_V2.2.1** directory
 
 ![X_CUBE_AWS_2 2 1_QC_Patch](https://user-images.githubusercontent.com/41168224/160009472-25c10564-b7f2-4365-a5bb-6e4496d480b2.png)
 
-## Apply the patch
+# 5. Apply the patch
 - Navigate to **X_CUBE_AWS_2.2.1_QC_Patch**
 
 ![QC_Patch](https://user-images.githubusercontent.com/41168224/160170716-2efcb0b5-c7b8-4a0f-bb35-239ad5e1d7df.png)
@@ -114,7 +127,7 @@ python .\apply_patch.py
 
 <img width="1025" alt="run_apply_patch" src="https://user-images.githubusercontent.com/41168224/160037873-c038bc95-ef63-41e6-a002-916cb34d5220.png">
 
-## Open the projects
+# 6. Open the projects
 - Open [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) new work space
 
 - Click **Browse...**
@@ -143,7 +156,7 @@ python .\apply_patch.py
 - Click **Finish**
 ![import_project_2](https://user-images.githubusercontent.com/41168224/160015124-eb12137d-14f8-4fa2-9691-0bda62cbd4a1.png)
 
-## Configure and build the projects
+# 7. Configure and build the projects
 
 - Open **aws_clientcredential.h**. This is how you find it
  
@@ -178,7 +191,7 @@ python .\apply_patch.py
 > 
 > 4- aws_demos
 
-## Run the Quick Connect script
+# 8. Run the Quick Connect script
 - Switch to ***STM32CubeExpansion_Cloud_AWS_V2.2.1\STM32_AWS_QuickConnect\Scripts*** directory
 
 ![STM32_AWS_QuickConnect](https://user-images.githubusercontent.com/41168224/160022982-bb8a70a8-86e4-4ef6-947a-cc4e9b866fa6.png)
@@ -211,11 +224,11 @@ python .\STM32_AWS_QuickConnect.py
 
 <img width="855" alt="run_qc" src="https://user-images.githubusercontent.com/41168224/160037963-737b9363-d5b3-4b57-b0ba-78dae16cd65a.png">
 
-## Check your device in AWS IoT Core
+# 9. Check your device in AWS IoT Core
 
 ![check_device_iot_core](https://user-images.githubusercontent.com/41168224/160038221-6b8f3d7b-9d2a-45e2-b265-21ea7167b657.png)
 
-## Cleaning up
+# 10. Cleaning up
 
 - STM32_AWS_CleanupThing.py:: Removes thing created by STM32_AWS_QuickConnect.py and associated certificate and policy.
 
