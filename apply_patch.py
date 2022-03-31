@@ -43,7 +43,11 @@ for dirPath in copy_dirPath_list:
   except OSError as e:
       print(f"Error:{ e.strerror}")
 
-copy_file_list = ['Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/main.c']
+copy_file_list = ['Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/main.c',
+                  'Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/STM32CubeIDE/.cproject',
+                  'Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/STM32CubeIDE/STM32L4S5VITX_FLASH_sbsfu.ld',
+                  'Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/STM32CubeIDE/B-L4S5I-IOT01_2_Images_SBSFU/.cproject',
+                  'Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/STM32CubeIDE/B-L4S5I-IOT01_2_Images_SBSFU/postbuild.sh',]
 
 for srcFile in copy_file_list:
   try:
