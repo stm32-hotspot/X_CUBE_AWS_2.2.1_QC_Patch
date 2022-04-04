@@ -41,8 +41,7 @@ The script will:
 
 
 # 3. Prerequisite
-**[STM32CubeIDE](https://www.st.com/stm32cubeide)**
-- Make sure to use rev 1.8.0
+**[STM32CubeIDE](https://www.st.com/stm32cubeide)** rev 1.9.0
 
 **[STM32CubeProgrammer](https://www.st.com/stm32cubeprog)**
 
