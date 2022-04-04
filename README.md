@@ -105,8 +105,12 @@ pip install boto3
 
 # 4. Get the firmware packs
 - Download and extreact [X-CUBE-AWS 2.2.1](https://www.st.com/en/embedded-software/x-cube-aws.html)
-
+- Navigate to **STM32CubeExpansion_Cloud_AWS_V2.2.1** directory
 - Clone the repo in your **STM32CubeExpansion_Cloud_AWS_V2.2.1** directory
+
+```
+git clone https://github.com/stm32-hotspot/X_CUBE_AWS_2.2.1_QC_Patch.git
+```
 
 ![X_CUBE_AWS_2 2 1_QC_Patch](https://user-images.githubusercontent.com/41168224/160009472-25c10564-b7f2-4365-a5bb-6e4496d480b2.png)
 
