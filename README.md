@@ -38,6 +38,7 @@ The script will:
 - The **X_CUBE_AWS_2.2.1 Quick Connect Patch** will remove the projects that are not needed by this Quick Connect. This to remove the confusion on which projects you need to import and build with STM32CubeIDE
 - Copy the Quick Connect script
 - Chnage the aws_demos **main.c** file to be compatible with X_CUBE_AWS_2.2.1 Quick Connect
+- Update the project to support STM32CubeIDE 1.9.0
 
 
 # 3. Prerequisite
