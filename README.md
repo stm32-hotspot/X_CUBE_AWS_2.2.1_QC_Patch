@@ -12,7 +12,8 @@ Prepare [X-CUBE-AWS 2.2.1](https://www.st.com/en/embedded-software/x-cube-aws.ht
 7. [Configure and build the projects](#7-configure-and-build-the-projects)
 8. [Run the Quick Connect script](#8-run-the-quick-connect-script)
 9. [Check your device in AWS IoT Core](#9-check-your-device-in-aws-iot-core)
-10. [Cleaning up](#10-cleaning-up)
+10. [Run the shadow demo ](#10-run-the-shadow-demo)
+11. [Cleaning up](#11-cleaning-up)
 
 # 1. What is X_CUBE_AWS_2.2.1 Quick Connect?
 **X_CUBE_AWS_2.2.1 Quick Connect** is a script that automates most of the steps required to connect [B-L4S5I-IOT01A](https://www.st.com/en/evaluation-tools/b-l4s5i-iot01a.html) board and [X-CUBE-AWS 2.2.1](https://www.st.com/en/embedded-software/x-cube-aws.html) to AWS making it easy and takes less time.
@@ -232,7 +233,29 @@ python .\STM32_AWS_QuickConnect.py
 
 ![check_device_iot_core](https://user-images.githubusercontent.com/41168224/160038221-6b8f3d7b-9d2a-45e2-b265-21ea7167b657.png)
 
-# 10. Cleaning up
+# 10. Run the shadow demo
+by default, X-CUBE-AWS comes with the OTA demo enabled. Here is how you can build a different demo. The SHADOW DEMO wll be used as an example.
+
+ Open **aws_demo_config.h**
+
+![aws_demo_config](https://user-images.githubusercontent.com/41168224/163469528-f8fcf404-2835-48e0-be4f-601898250002.png)
+
+- change the on line 45 from **#define CONFIG_OTA_UPDATE_DEMO_ENABLED** to **#define CONFIG_SHADOW_DEMO_ENABLED**
+
+![CONFIG_SHADOW_DEMO_ENABLED](https://user-images.githubusercontent.com/41168224/163469236-8ab25a48-eb2c-4f26-93f0-493f658ae484.png)
+
+
+- Build the project
+
+![build_aws_demos](https://user-images.githubusercontent.com/41168224/163470866-cd2fa52a-df3b-4f71-89bf-1a7562f7e456.png)
+
+
+- Flash the board with the **SBSFU_B-L4S5I-IOT01_aws_demos.bin** binary located under **.\STM32CubeExpansion_Cloud_AWS_V2.2.1\Projects\B-L4S5I-IOT01A\Applications\Cloud\aws_demos\STM32CubeIDE\PostBuild**
+
+![SBSFU_B-L4S5I-IOT01_aws_demos](https://user-images.githubusercontent.com/41168224/163470378-71d8fd4a-829c-41dc-833f-3bd11dc21447.png)
+
+
+# 11. Cleaning up
 
 - STM32_AWS_CleanupThing.py:: Removes thing created by STM32_AWS_QuickConnect.py and associated certificate and policy.
 
