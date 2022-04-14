@@ -13,7 +13,8 @@ Prepare [X-CUBE-AWS 2.2.1](https://www.st.com/en/embedded-software/x-cube-aws.ht
 8. [Run the Quick Connect script](#8-run-the-quick-connect-script)
 9. [Check your device in AWS IoT Core](#9-check-your-device-in-aws-iot-core)
 10. [Run the shadow demo ](#10-run-the-shadow-demo)
-11. [Cleaning up](#11-cleaning-up)
+11. [Monitoring MQTT messages on the cloud](#11-monitoring-mqtt-messages-on-the-cloud)
+12. [Cleaning up](#12-cleaning-up)
 
 # 1. What is X_CUBE_AWS_2.2.1 Quick Connect?
 **X_CUBE_AWS_2.2.1 Quick Connect** is a script that automates most of the steps required to connect [B-L4S5I-IOT01A](https://www.st.com/en/evaluation-tools/b-l4s5i-iot01a.html) board and [X-CUBE-AWS 2.2.1](https://www.st.com/en/embedded-software/x-cube-aws.html) to AWS making it easy and takes less time.
@@ -240,7 +241,7 @@ by default, X-CUBE-AWS comes with the OTA demo enabled. Here is how you can buil
 
 ![aws_demo_config](https://user-images.githubusercontent.com/41168224/163469528-f8fcf404-2835-48e0-be4f-601898250002.png)
 
-- change the on line 45 from **#define CONFIG_OTA_UPDATE_DEMO_ENABLED** to **#define CONFIG_SHADOW_DEMO_ENABLED**
+- change the definition on line 45 from **#define CONFIG_OTA_UPDATE_DEMO_ENABLED** to **#define CONFIG_SHADOW_DEMO_ENABLED**
 
 ![CONFIG_SHADOW_DEMO_ENABLED](https://user-images.githubusercontent.com/41168224/163469236-8ab25a48-eb2c-4f26-93f0-493f658ae484.png)
 
@@ -254,8 +255,20 @@ by default, X-CUBE-AWS comes with the OTA demo enabled. Here is how you can buil
 
 ![SBSFU_B-L4S5I-IOT01_aws_demos](https://user-images.githubusercontent.com/41168224/163470378-71d8fd4a-829c-41dc-833f-3bd11dc21447.png)
 
+# 11. Monitoring MQTT messages on the cloud
 
-# 11. Cleaning up
+To subscribe to the MQTT topic with the AWS IoT MQTT client
+
+- Sign in to the AWS IoT [console](https://console.aws.amazon.com/iotv2/).
+
+- In the navigation pane, choose Test, then choose MQTT test client to open the MQTT client.
+
+- In Subscription topic, enter $aws/things/***<IOT_THING_NAME>***/shadow/update/delta, and then choose Subscribe to topic.
+
+![SHADOW_TOPIC](https://user-images.githubusercontent.com/41168224/163480616-b8b508e2-75b7-456d-bf62-d8fe05d30146.png)
+
+
+# 12. Cleaning up
 
 - STM32_AWS_CleanupThing.py:: Removes thing created by STM32_AWS_QuickConnect.py and associated certificate and policy.
 
