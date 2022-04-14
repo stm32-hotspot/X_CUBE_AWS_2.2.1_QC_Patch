@@ -234,7 +234,7 @@ python .\STM32_AWS_QuickConnect.py
 ![check_device_iot_core](https://user-images.githubusercontent.com/41168224/160038221-6b8f3d7b-9d2a-45e2-b265-21ea7167b657.png)
 
 # 10. Run the shadow demo
-by default, X-CUBE-AWS comes with the OTA demo enabled. Here is how you can build a different demo. The SHADOW DEMO wll be used as an example.
+by default, X-CUBE-AWS comes with the OTA demo enabled. Here is how you can build a different demo. The SHADOW DEMO is used as an example.
 
  Open **aws_demo_config.h**
 
